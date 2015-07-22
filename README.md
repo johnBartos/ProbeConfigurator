@@ -3,8 +3,11 @@ Command line tool to configure the Z-Probe for Marlin
 
 # To Use: 
 Download files
+
 python ConsoleMenu.py
+
 Fill in the values when prompted
+
 Replace Configuration.h with new_config.h after reviewing changes
 
 It's not quite done yet. Right now, it's only capable of modifying the current values:
