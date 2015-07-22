@@ -1,0 +1,20 @@
+#define min_software_endstops true -> #define min_software_endstops false
+
+//#define ENABLE_AUTO_BED_LEVELING -> #define ENABLE_AUTO_BED_LEVELING
+
+#define LEFT_PROBE_BED_POSITION 15 -> #define LEFT_PROBE_BED_POSITION X (suggested: 50)
+#define RIGHT_PROBE_BED_POSITION 15 -> #define RIGHT_PROBE_BED_POSITION X (suggested: 150)
+#define BACK_PROBE_BED_POSITION 15 -> #define BACK_PROBE_BED_POSITION X (suggested: 150)
+#define FRONT_PROBE_BED_POSITION 15 ->#define FRONT_PROBE_BED_POSITION X (suggested: 50)
+
+#define X_PROBE_OFFSET_FROM_EXTRUDER -25 -> #define X_PROBE_OFFSET_FROM_EXTRUDER X
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -29 -> #define Y_PROBE_OFFSET_FROM_EXTRUDER X
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -12.35 -> #define Z_PROBE_OFFSET_FROM_EXTRUDER X
+
+#define XY_TRAVEL_SPEED 4000 -> #define XY_TRAVEL_SPEED X (suggested: 4000)
+#define Z_RAISE_BEFORE_PROBING 15 -> #define Z_RAISE_BEFORE_PROBING X (suggested: 15)
+#define Z_RAISE_BETWEEN_PROBING 5 -> #define Z_RAISE_BETWEEN_PROBING X (suggested: 5)
+
+#define NUM_SERVOS 3 -> #define NUM_SERVOS X (suggested: 1)
+//#define SERVO_ENDSTOPS {-1, -1, 0} -> #define SERVO_ENDSTOPS {-1, -1, 0}
+//#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 70, 0} -> #define SERVO_ENDSTOP_ANGLES  {0,0, 0,0, X,Y} (suggested: 165,65)
