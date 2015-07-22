@@ -10,7 +10,8 @@ Fill in the values when prompted
 
 Replace Configuration.h with new_config.h after reviewing changes
 
-It's not quite done yet. Right now, it's only capable of modifying the current values:
+#It's not quite done yet...
+Right now, it's only capable of modifying the current values:
 
 "#define LEFT_PROBE_BED_POSITION"
 
