@@ -23,4 +23,10 @@ def do_configuration():
     new_configs = get_user_input(full_config_set)
     Configurator.write_new_config(new_configs)
 
-do_configuration()
+def create_menu_options():
+    menu = []
+    menu.append(Configs.ConfigMenuItem("Bed Dimension", probe_bed_lines))
+    menu.append(Configs.ConfigMenuItem("Probe Offsets", probe_offset_lines))
+    menu.append(Configs.ConfigMenuItem("Probe Motion", probe_travel_lines))
+    menu.append(Configs.ConfigMenuItem("Servo Properties", probe_servo_lines))
+    return menu

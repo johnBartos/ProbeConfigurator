@@ -39,5 +39,10 @@ class ProbeConfigs:
 
 class ConfigItem:
     def __init__(self, name, value):
-        self.name =name
+        self.name = name
         self.value = value
+
+class ConfigMenuItem:
+    def __init__(self, menu_name, menu_options):
+        self.menu_name = menu_name
+        self.menu_options = menu_options
