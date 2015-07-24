@@ -7,9 +7,7 @@ probe_travel_lines = ["#define XY_TRAVEL_SPEED", "#define Z_RAISE_BEFORE_PROBING
 probe_servo_lines = ["#define NUM_SERVOS"]
 probe_enable_lines = ["#define SERVO_ENDSTOPS", "#define SERVO_ENDSTOP_ANGLES"]
 
-path = 'C:\\Code\\Configuration.h'
-
-def get_all_configs():
+def get_all_configs(path):
     bed_configs = Configurator.find_config_lines(path, probe_bed_lines)
     offset_configs = Configurator.find_config_lines(path, probe_offset_lines)
     travel_configs = Configurator.find_config_lines(path, probe_travel_lines)

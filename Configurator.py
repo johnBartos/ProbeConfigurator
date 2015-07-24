@@ -6,7 +6,7 @@ def print_configs(config_set):
 
 def find_config_lines(path, config_lines):
     config_set = []
-    with open('Configuration.h', 'rU') as file:
+    with open(path, 'rU') as file:
         for line in file:
             for config in config_lines:
                 if(config in line):

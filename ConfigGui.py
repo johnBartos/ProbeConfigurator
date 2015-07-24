@@ -1,13 +1,14 @@
 from tkinter import *
 import ConfigController
 import tkinter.font
+import tkinter.filedialog
+
 root = Tk()
 
-def make_gui():
+def make_gui(config_groups):
     group_font = tkinter.font.Font(root = root, weight= 'bold')
-    all_config_groups = ConfigController.get_all_configs()
-    i = 0
-    for group in all_config_groups:
+    i = 1
+    for group in config_groups:
         Label(root, text=group.group_name, font=group_font).grid(row=i)
         for config in group.config_items:
             i += 1
@@ -21,5 +22,9 @@ def place_label_box(config, row):
     e.insert(END, config.value)
     e.grid(row=row, column=1)
 
-make_gui()
+
+path = tkinter.filedialog.askopenfilename(parent=root)
+
+all_config_groups = ConfigController.get_all_configs(path)
+make_gui(all_config_groups)
 root.mainloop()
