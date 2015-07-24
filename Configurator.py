@@ -4,7 +4,7 @@ def print_configs(config_set):
     for c in config_set:
         print(c.name + " " + c.value)
 
-def find_config_lines(config_lines):
+def find_config_lines(path, config_lines):
     config_set = []
     with open('Configuration.h', 'rU') as file:
         for line in file:
@@ -16,9 +16,9 @@ def find_config_lines(config_lines):
                     config_set.append(config)
     return config_set
 
-def write_new_config(config_set):
-    with open('new_config.h', 'w') as f:
-        with open('Configuration.h', 'rU') as file:
+def write_new_config(path, config_set):
+    with open(path +'new_config.h', 'w') as f:
+        with open(path, 'rU') as file:
             for line in file:
                 did_write = 0
                 for config in config_set:
