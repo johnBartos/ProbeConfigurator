@@ -7,12 +7,12 @@ probe_travel_lines = ["#define XY_TRAVEL_SPEED", "#define Z_RAISE_BEFORE_PROBING
 probe_servo_lines = ["#define NUM_SERVOS"]
 probe_enable_lines = ["#define SERVO_ENDSTOPS", "#define SERVO_ENDSTOP_ANGLES"]
 
-def get_all_configs(path):
-    bed_configs = Configurator.find_config_lines(path, probe_bed_lines)
-    offset_configs = Configurator.find_config_lines(path, probe_offset_lines)
-    travel_configs = Configurator.find_config_lines(path, probe_travel_lines)
-    servo_configs = Configurator.find_config_lines(path, probe_servo_lines)
-    enable_lines = Configurator.find_config_lines(path, probe_enable_lines)
+def get_all_configs(file):
+    bed_configs = Configurator.find_config_lines(file, probe_bed_lines)
+    offset_configs = Configurator.find_config_lines(file, probe_offset_lines)
+    travel_configs = Configurator.find_config_lines(file, probe_travel_lines)
+    servo_configs = Configurator.find_config_lines(file, probe_servo_lines)
+    enable_lines = Configurator.find_config_lines(file, probe_enable_lines)
 
     menu = []
     menu.append(Configs.ConfigGroup("Bed Dimension", bed_configs))
@@ -23,5 +23,5 @@ def get_all_configs(path):
 
     return menu
 
-def save_all_configs(path, new_configs):
-    Configurator.write_new_config(path, new_configs)
+def save_all_configs(file, new_configs):
+    Configurator.write_new_config(file, new_configs)
