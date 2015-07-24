@@ -19,5 +19,9 @@ def get_all_configs(path):
     menu.append(Configs.ConfigGroup("Probe Offsets", offset_configs))
     menu.append(Configs.ConfigGroup("Probe Motion", travel_configs))
     menu.append(Configs.ConfigGroup("Servo Properties", servo_configs))
+    menu.append(Configs.ConfigGroup("Enables", enable_lines))
 
     return menu
+
+def save_all_configs(path, new_configs):
+    Configurator.write_new_config(path, new_configs)

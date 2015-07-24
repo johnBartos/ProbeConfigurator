@@ -17,7 +17,7 @@ def find_config_lines(path, config_lines):
     return config_set
 
 def write_new_config(path, config_set):
-    with open(path +'new_config.h', 'w') as f:
+    with open(path +'_new', 'w') as f:
         with open(path, 'rU') as file:
             for line in file:
                 did_write = 0
