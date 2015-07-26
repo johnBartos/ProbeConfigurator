@@ -32,15 +32,15 @@ def place_save_button(row):
     Button(root, text='Save', command = prompt_save_config).grid(row = row)
 
 def prompt_save_config():
-    file = tkinter.filedialog.asksaveasfile(mode='w', defaultextension=".h")
-    save_inputs(file)
+    new_file = tkinter.filedialog.asksaveasfile(mode='w', defaultextension=".h")
+    save_inputs(new_file)
 
-def save_inputs(file):
+def save_inputs(new_file):
     new_configs = []
     for i in inputs:
         new_val = i.config_entry.get()
         new_configs.append(Configs.ConfigItem(i.config_name, new_val))
-    ConfigController.save_all_configs(file, new_configs)
+    ConfigController.save_all_configs(config_path, new_file, new_configs)
 
 config_path = tkinter.filedialog.askopenfilename(parent=root)
 all_config_groups = ConfigController.get_all_configs(config_path)

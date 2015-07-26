@@ -16,19 +16,18 @@ def find_config_lines(path, config_lines):
                     config_set.append(config)
     return config_set
 
-def write_new_config(path, config_set):
-    with open(path +'_new', 'w') as f:
-        with open(path, 'rU') as file:
-            for line in file:
+def write_new_config(old_file_path, new_file, config_set):
+    with open(old_file_path, 'rU') as file:
+        for line in file:
+            did_write = 0
+            for config in config_set:
+                if(config.name in line):
+                    new_file.write(config.name + " " + config.value + "\n")
+                    did_write = 1
+                    break
+            if (did_write != 1):
+                new_file.write(line)
                 did_write = 0
-                for config in config_set:
-                    if(config.name in line):
-                        f.write(config.name + " " + config.value + "\n")
-                        did_write = 1
-                        break
-                if (did_write != 1):
-                    f.write(line)
-                    did_write = 0
 
 def strip_comment(line):
     comment_pos = line.find("//")

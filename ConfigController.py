@@ -23,5 +23,5 @@ def get_all_configs(file):
 
     return menu
 
-def save_all_configs(file, new_configs):
-    Configurator.write_new_config(file, new_configs)
+def save_all_configs(old_file_path, new_file, new_configs):
+    Configurator.write_new_config(old_file_path, new_file, new_configs)
