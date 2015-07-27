@@ -22,11 +22,12 @@ def write_new_config(old_file_path, new_file, config_set):
             did_write = 0
             for config in config_set:
                 if(config.name in line):
-                    new_file.write(config.name + " " + config.value + "\n")
+                    line_to_write = (config.name + " " + config.value + "\n").encode('UTF-8')
+                    new_file.write(line_to_write)
                     did_write = 1
                     break
             if (did_write != 1):
-                new_file.write(line)
+                new_file.write(line.encode('UTF-8'))
                 did_write = 0
 
 def strip_comment(line):

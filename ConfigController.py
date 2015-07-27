@@ -1,5 +1,7 @@
 import Configurator
 import Configs
+import tempfile
+import os
 
 probe_bed_lines = ["#define LEFT_PROBE_BED_POSITION", "#define RIGHT_PROBE_BED_POSITION", "#define BACK_PROBE_BED_POSITION", "#define FRONT_PROBE_BED_POSITION"]
 probe_offset_lines = ["#define X_PROBE_OFFSET_FROM_EXTRUDER", "#define Y_PROBE_OFFSET_FROM_EXTRUDER", "#define Z_PROBE_OFFSET_FROM_EXTRUDER"]
@@ -24,4 +26,7 @@ def get_all_configs(file):
     return menu
 
 def save_all_configs(old_file_path, new_file, new_configs):
-    Configurator.write_new_config(old_file_path, new_file, new_configs)
+    with (tempfile.NamedTemporaryFile(dir=os.path.dirname(old_file_path), delete=False)) as temp:
+        Configurator.write_new_config(old_file_path, temp, new_configs)
+    os.replace(temp.name, new_file)
+    #os.remove(temp.name)

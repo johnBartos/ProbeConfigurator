@@ -8,7 +8,7 @@
 //===========================================================================
 /*
 Here are some standard links for getting your machine calibrated:
- * http://reprap.org/wiki/Calibration 
+ * http://reprap.org/wiki/Calibration
  * http://youtu.be/wAL9d7FgInk
  * http://calculator.josefprusa.cz
  * http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide
@@ -104,7 +104,7 @@ Here are some standard links for getting your machine calibrated:
 // 10 is 100k RS thermistor 198-961 (4.7k pullup)
 // 11 is 100k beta 3950 1% thermistor (4.7k pullup)
 // 12 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup) (calibrated for Makibox hot bed)
-// 13 is 100k Hisens 3950  1% up to 300°C for hotend "Simple ONE " & "Hotend "All In ONE" 
+// 13 is 100k Hisens 3950  1% up to 300Â°C for hotend "Simple ONE " & "Hotend "All In ONE"
 // 20 is the PT100 circuit found in the Ultimainboard V2.x
 // 60 is 100k Maker's Tool Works Kapton Bed Thermistor beta=3950
 //
@@ -256,15 +256,15 @@ The issue: If a thermistor come off, it will read a lower temperature than actua
 The system will turn the heater on forever, burning up the filament and anything
 else around.
 
-After the temperature reaches the target for the first time, this feature will 
-start measuring for how long the current temperature stays below the target 
+After the temperature reaches the target for the first time, this feature will
+start measuring for how long the current temperature stays below the target
 minus _HYSTERESIS (set_temperature - THERMAL_RUNAWAY_PROTECTION_HYSTERESIS).
 
 If it stays longer than _PERIOD, it means the thermistor temperature
 cannot catch up with the target, so something *may be* wrong. Then, to be on the
 safe side, the system will he halt.
 
-Bear in mind the count down will just start AFTER the first time the 
+Bear in mind the count down will just start AFTER the first time the
 thermistor temperature is over the target, so you will have no problem if
 your extruder heater takes 2 minutes to hit the target on heating.
 
@@ -399,10 +399,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
   #ifdef AUTO_BED_LEVELING_GRID
 
     // set the rectangle in which to probe
-    #define LEFT_PROBE_BED_POSITION 15
-    #define RIGHT_PROBE_BED_POSITION 160
-    #define BACK_PROBE_BED_POSITION 170
-    #define FRONT_PROBE_BED_POSITION 30
+#define LEFT_PROBE_BED_POSITION 1337
+#define RIGHT_PROBE_BED_POSITION 160
+#define BACK_PROBE_BED_POSITION 170
+#define FRONT_PROBE_BED_POSITION 30
 
      // set the number of grid points per dimension
      // I wouldn't see a reason to go above 3 (=9 probing points on the bed)
@@ -422,20 +422,20 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
   #endif // AUTO_BED_LEVELING_GRID
 
-  
+
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   // X and Y offsets must be integers
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 30
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER -11
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.81 //closer to 0 -> farther from bed
+#define X_PROBE_OFFSET_FROM_EXTRUDER 30
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -11
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.81
 
   #define Z_RAISE_BEFORE_HOMING 20         // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
 
-  #define XY_TRAVEL_SPEED 4000          // X and Y axis travel speed between probes, in mm/min
+#define XY_TRAVEL_SPEED 4000
 
-  #define Z_RAISE_BEFORE_PROBING 15    //How much the extruder will be raised before traveling to the first probing point.
-  #define Z_RAISE_BETWEEN_PROBINGS 5  //How much the extruder will be raised when traveling from between next probing points
+#define Z_RAISE_BEFORE_PROBING 15
+#define Z_RAISE_BETWEEN_PROBING 5
 
   //#define Z_PROBE_SLED // turn on if you have a z-probe mounted on a sled like those designed by Charles Bell
   //#define SLED_DOCKING_OFFSET 5 // the extra distance the X axis must travel to pickup the sled. 0 should be fine but you can push it further if you'd like.
@@ -484,9 +484,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 	  #endif
 	#endif
 
-	
+
   #endif
-  
+
 #endif // ENABLE_AUTO_BED_LEVELING
 
 
@@ -562,8 +562,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //LCD and SD support
 
 // Character based displays can have different extended charsets.
-#define DISPLAY_CHARSET_HD44780_JAPAN     // "ääööüüß23°"
-//#define DISPLAY_CHARSET_HD44780_WESTERN // "ÄäÖöÜüß²³°" if you see a '~' instead of a 'arrow_right' at the right of submenuitems - this is the right one.
+#define DISPLAY_CHARSET_HD44780_JAPAN     // "Ã¤Ã¤Ã¶Ã¶Ã¼Ã¼ÃŸ23Â°"
+//#define DISPLAY_CHARSET_HD44780_WESTERN // "Ã„Ã¤Ã–Ã¶ÃœÃ¼ÃŸÂ²Â³Â°" if you see a '~' instead of a 'arrow_right' at the right of submenuitems - this is the right one.
 
 //#define ULTRA_LCD  //general LCD support, also 16x2
 //#define DOGLCD  // Support for SPI LCD 128x64 (Controller ST7565R graphic Display Family)
@@ -695,7 +695,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // Shift register panels
 // ---------------------
 // 2 wire Non-latching LCD SR from:
-// https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/schematics#!shiftregister-connection 
+// https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/schematics#!shiftregister-connection
 
 //#define SAV_3DLCD
 #ifdef SAV_3DLCD
@@ -779,23 +779,23 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // leaving it undefined or defining as 0 will disable the servo subsystem
 // If unsure, leave commented / disabled
 //
-#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 1
 
 // Servo Endstops
 //
 // This allows for servo actuated endstops, primary usage is for the Z Axis to eliminate calibration or bed height changes.
 // Use M206 command to correct for switch height offset to actual nozzle height. Store that setting with M500.
 //
-#define SERVO_ENDSTOPS {-1, -1, 0} // Servo index for X, Y, Z. Disable with -1
-#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 76, 0} // X,Y,Z Axis Extend and Retract angles
+#define SERVO_ENDSTOPS {-1, -1, 0}
+#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 76, 0}
 
 /**********************************************************************\
  * Support for a filament diameter sensor
  * Also allows adjustment of diameter at print time (vs  at slicing)
  * Single extruder only at this point (extruder 0)
- * 
+ *
  * Motherboards
- * 34 - RAMPS1.4 - uses Analog input 5 on the AUX2 connector 
+ * 34 - RAMPS1.4 - uses Analog input 5 on the AUX2 connector
  * 81 - Printrboard - Uses Analog input 2 on the Exp1 connector (version B,C,D,E)
  * 301 - Rambo  - uses Analog input 3
  * Note may require analog pins to be defined for different motherboards
@@ -812,7 +812,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define MAX_MEASUREMENT_DELAY			20  //delay buffer size in bytes (1 byte = 1cm)- limits maximum measurement delay allowable (must be larger than MEASUREMENT_DELAY_CM  and lower number saves RAM)
 
 //defines used in the code
-#define DEFAULT_MEASURED_FILAMENT_DIA  DEFAULT_NOMINAL_FILAMENT_DIA  //set measured to nominal initially 
+#define DEFAULT_MEASURED_FILAMENT_DIA  DEFAULT_NOMINAL_FILAMENT_DIA  //set measured to nominal initially
 
 //When using an LCD, uncomment the line below to display the Filament sensor data on the last line instead of status.  Status will appear for 5 sec.
 //#define FILAMENT_LCD_DISPLAY
