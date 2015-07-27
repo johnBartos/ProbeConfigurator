@@ -1,17 +1,17 @@
-from tkinter import *
+import tkinter as tk
 import ConfigController
 import tkinter.font
 import tkinter.filedialog
 import Configs
 
-root = Tk()
+root = tk.Tk()
+root.wm_title("Marlin Probe Configurator")
 
 def make_gui(config_groups):
     config_entries = []
-    group_font = tkinter.font.Font(root = root, weight= 'bold')
     i = 1
     for group in config_groups:
-        Label(root, text=group.group_name, font=group_font).grid(row=i)
+        place_group_label(group.group_name, i)
         for config in group.config_items:
             i += 1
             config_entries.append(Configs.ConfigEntry(config.name, place_label_box(config, i)))
@@ -19,17 +19,22 @@ def make_gui(config_groups):
     place_save_button(i)
     return config_entries
 
+def place_group_label(group_name, row):
+    group_font = tkinter.font.Font(root = root, weight= 'bold')
+    tk.Label(root, text=group_name, font=group_font).grid(row=row)
+
 def place_label_box(config, row):
-    l = Label(root, text=config.name)
-    l.grid(row=row)
-    e = Entry(root)
-    e.insert(END, config.value)
-    e.grid(row=row, column=1)
+    l = tk.Label(root, text=config.name)
+    l.grid(row=row, column = 0)
+    e = tk.Entry(root)
+    e.insert(tk.END, config.value)
+    e.grid(row=row, column = 1)
     e.focus_set()
     return e
 
 def place_save_button(row):
-    Button(root, text='Save', command = prompt_save_config).grid(row = row)
+    button_font = tkinter.font.Font(root = root, weight= 'bold')
+    tk.Button(root, text='Save', command = prompt_save_config, font=button_font).grid(row=row, column=0, columnspan=2, sticky=tk.W + tk.E + tk.N + tk.S, pady=(5, 0))
 
 def prompt_save_config():
     new_file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".h")

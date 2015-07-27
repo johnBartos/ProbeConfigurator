@@ -104,7 +104,7 @@ Here are some standard links for getting your machine calibrated:
 // 10 is 100k RS thermistor 198-961 (4.7k pullup)
 // 11 is 100k beta 3950 1% thermistor (4.7k pullup)
 // 12 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup) (calibrated for Makibox hot bed)
-// 13 is 100k Hisens 3950  1% up to 300Â°C for hotend "Simple ONE " & "Hotend "All In ONE"
+// 13 is 100k Hisens 3950  1% up to 300Ã‚Â°C for hotend "Simple ONE " & "Hotend "All In ONE"
 // 20 is the PT100 circuit found in the Ultimainboard V2.x
 // 60 is 100k Maker's Tool Works Kapton Bed Thermistor beta=3950
 //
@@ -374,7 +374,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //============================= Bed Auto Leveling ===========================
 //===========================================================================
 
-#define ENABLE_AUTO_BED_LEVELING // Delete the comment to enable (remove // at the start of the line)
+#define ENABLE_AUTO_BED_LEVELING 
 #define Z_PROBE_REPEATABILITY_TEST  // If not commented out, Z-Probe Repeatability test will be included if Auto Bed Leveling is Enabled.
 
 #ifdef ENABLE_AUTO_BED_LEVELING
@@ -562,8 +562,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //LCD and SD support
 
 // Character based displays can have different extended charsets.
-#define DISPLAY_CHARSET_HD44780_JAPAN     // "Ã¤Ã¤Ã¶Ã¶Ã¼Ã¼ÃŸ23Â°"
-//#define DISPLAY_CHARSET_HD44780_WESTERN // "Ã„Ã¤Ã–Ã¶ÃœÃ¼ÃŸÂ²Â³Â°" if you see a '~' instead of a 'arrow_right' at the right of submenuitems - this is the right one.
+#define DISPLAY_CHARSET_HD44780_JAPAN     // "ÃƒÂ¤ÃƒÂ¤ÃƒÂ¶ÃƒÂ¶ÃƒÂ¼ÃƒÂ¼ÃƒÅ¸23Ã‚Â°"
+//#define DISPLAY_CHARSET_HD44780_WESTERN // "Ãƒâ€žÃƒÂ¤Ãƒâ€“ÃƒÂ¶ÃƒÅ“ÃƒÂ¼ÃƒÅ¸Ã‚Â²Ã‚Â³Ã‚Â°" if you see a '~' instead of a 'arrow_right' at the right of submenuitems - this is the right one.
 
 //#define ULTRA_LCD  //general LCD support, also 16x2
 //#define DOGLCD  // Support for SPI LCD 128x64 (Controller ST7565R graphic Display Family)
