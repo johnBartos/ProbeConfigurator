@@ -1,37 +1,48 @@
 # ProbeConfigurator
-Command line tool to configure the Z-Probe for Marlin
+Tool to configure the Z-Probe for Marlin
 
-# To Use: 
-Download files
+# To Use:
+1. Open ProbeConfigurator
 
-python ConsoleMenu.py
+2. Select Config file
 
-Fill in the values when prompted
+3. Set Variables
 
-Replace Configuration.h with new_config.h after reviewing changes
+4. Hit Save, select file to save to (choose new file or overwrite existing)
 
-#It's not quite done yet...
-Right now, it's only capable of modifying the current values:
 
-"#define LEFT_PROBE_BED_POSITION"
+# Selected Variables
 
-"#define RIGHT_PROBE_BED_POSITION"
+#define min_software_endstops
 
-"#define BACK_PROBE_BED_POSITION"
+#define ENABLE_AUTO_BED_LEVELING
 
-"#define FRONT_PROBE_BED_POSITION"
 
-"#define X_PROBE_OFFSET_FROM_EXTRUDER"
+#define LEFT_PROBE_BED_POSITION
 
-"#define Y_PROBE_OFFSET_FROM_EXTRUDER"
+#define RIGHT_PROBE_BED_POSITION
 
-"#define Z_PROBE_OFFSET_FROM_EXTRUDER"
+#define BACK_PROBE_BED_POSITION
 
-"#define XY_TRAVEL_SPEED"
+#define FRONT_PROBE_BED_POSITION
 
-"#define Z_RAISE_BEFORE_PROBING"
 
-"#define Z_RAISE_BETWEEN_PROBING"
+#define X_PROBE_OFFSET_FROM_EXTRUDER
 
-"#define NUM_SERVOS"
+#define Y_PROBE_OFFSET_FROM_EXTRUDER
 
+#define Z_PROBE_OFFSET_FROM_EXTRUDER
+
+
+#define XY_TRAVEL_SPEED
+
+#define Z_RAISE_BEFORE_PROBING
+
+#define Z_RAISE_BETWEEN_PROBING
+
+
+#define NUM_SERVOS
+
+#define SERVO_ENDSTOPS
+
+#define SERVO_ENDSTOP_ANGLES

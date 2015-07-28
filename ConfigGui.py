@@ -49,4 +49,5 @@ def save_inputs(new_file_path):
 config_path = tkinter.filedialog.askopenfilename(parent=root)
 all_config_groups = ConfigController.get_all_configs(config_path)
 inputs = make_gui(all_config_groups)
+root.focus_force()
 root.mainloop()
