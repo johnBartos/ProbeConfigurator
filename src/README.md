@@ -1,6 +1,8 @@
 # ProbeConfigurator
 Tool to configure the Z-Probe for Marlin
 
+![The GUI](http://i.imgur.com/WWgRFNl.png)
+
 # To Use:
 1. Open ProbeConfigurator
 
