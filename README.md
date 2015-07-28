@@ -3,14 +3,19 @@ Tool to configure the Z-Probe for Marlin
 
 ![The GUI](http://i.imgur.com/WWgRFNl.png)
 
+# Requirements
+Python 3.3+
+
 # To Use:
-1. Open ProbeConfigurator
+1. Download the .Zip
 
-2. Select Config file
+2. In a command window, navigate to the /src folder and run "python ConfigGui.py"
 
-3. Set Variables
+3. Select Config file
 
-4. Hit Save, select file to save to (choose new file or overwrite existing)
+4. Set Variables
+
+5. Hit Save, select file to save to (choose new file or overwrite existing)
 
 
 # Selected Variables
