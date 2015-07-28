@@ -12,8 +12,8 @@ def make_gui(config_groups):
     i = 1
     for group in config_groups:
         place_group_label(group.group_name, i)
+        i += 1
         for config in group.config_items:
-            i += 1
             config_entries.append(Configs.ConfigEntry(config.name, place_label_box(config, i)))
             i += 1
     place_save_button(i)
@@ -24,8 +24,7 @@ def place_group_label(group_name, row):
     tk.Label(root, text=group_name, font=group_font).grid(row=row)
 
 def place_label_box(config, row):
-    l = tk.Label(root, text=config.name)
-    l.grid(row=row, column = 0)
+    tk.Label(root, text=config.name).grid(row=row, column = 0)
     e = tk.Entry(root)
     e.insert(tk.END, config.value)
     e.grid(row=row, column = 1)

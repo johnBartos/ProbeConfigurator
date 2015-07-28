@@ -1,3 +1,5 @@
+<-- These are the lines the configurator sets -->
+
 #define min_software_endstops true -> #define min_software_endstops false
 
 //#define ENABLE_AUTO_BED_LEVELING -> #define ENABLE_AUTO_BED_LEVELING

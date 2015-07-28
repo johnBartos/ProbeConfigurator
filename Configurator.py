@@ -1,9 +1,5 @@
 import Configs
 
-def print_configs(config_set):
-    for c in config_set:
-        print(c.name + " " + c.value)
-
 def find_config_lines(path, config_lines):
     config_set = []
     with open(path, 'rU') as file:
