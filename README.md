@@ -13,36 +13,36 @@ Tool to configure the Z-Probe for Marlin
 
 # Selected Variables
 
-#define min_software_endstops
+"#define min_software_endstops"
 
-#define ENABLE_AUTO_BED_LEVELING
-
-
-#define LEFT_PROBE_BED_POSITION
-
-#define RIGHT_PROBE_BED_POSITION
-
-#define BACK_PROBE_BED_POSITION
-
-#define FRONT_PROBE_BED_POSITION
+"#define ENABLE_AUTO_BED_LEVELING"
 
 
-#define X_PROBE_OFFSET_FROM_EXTRUDER
+"#define LEFT_PROBE_BED_POSITION"
 
-#define Y_PROBE_OFFSET_FROM_EXTRUDER
+"#define RIGHT_PROBE_BED_POSITION"
 
-#define Z_PROBE_OFFSET_FROM_EXTRUDER
+"#define BACK_PROBE_BED_POSITION"
 
-
-#define XY_TRAVEL_SPEED
-
-#define Z_RAISE_BEFORE_PROBING
-
-#define Z_RAISE_BETWEEN_PROBING
+"#define FRONT_PROBE_BED_POSITION"
 
 
-#define NUM_SERVOS
+"#define X_PROBE_OFFSET_FROM_EXTRUDER"
 
-#define SERVO_ENDSTOPS
+"#define Y_PROBE_OFFSET_FROM_EXTRUDER"
 
-#define SERVO_ENDSTOP_ANGLES
+"#define Z_PROBE_OFFSET_FROM_EXTRUDER"
+
+
+"#define XY_TRAVEL_SPEED"
+
+"#define Z_RAISE_BEFORE_PROBING"
+
+"#define Z_RAISE_BETWEEN_PROBING"
+
+
+"#define NUM_SERVOS"
+
+"#define SERVO_ENDSTOPS"
+
+"#define SERVO_ENDSTOP_ANGLES"
